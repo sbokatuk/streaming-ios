@@ -39,6 +39,7 @@ class BaseTest: UIViewController , R5StreamDelegate {
     var currentView : R5VideoViewController? = nil
     var publishStream : R5Stream? = nil
     var subscribeStream : R5Stream? = nil
+    var subscribe2Stream : R5Stream? = nil
     
     required init () {
         
@@ -61,6 +62,12 @@ class BaseTest: UIViewController , R5StreamDelegate {
             self.subscribeStream?.delegate = nil
             self.subscribeStream = nil
         }
+        
+        if( self.subscribe2Stream != nil ) {
+            self.subscribe2Stream?.client = nil
+            self.subscribe2Stream?.delegate = nil
+            self.subscribe2Stream = nil
+        }
         self.removeFromParentViewController()
     }
     
@@ -74,6 +81,10 @@ class BaseTest: UIViewController , R5StreamDelegate {
         
         if( self.subscribeStream != nil ){
             self.subscribeStream!.stop()
+        }
+        
+        if( self.subscribe2Stream != nil ){
+            self.subscribe2Stream!.stop()
         }
         
         // Moved to status disconnect, due to publisher emptying queue buffer on bad connections.
@@ -109,18 +120,6 @@ class BaseTest: UIViewController , R5StreamDelegate {
         self.publishStream = R5Stream(connection: connection)
         self.publishStream!.delegate = self
         
-        if(Testbed.getParameter(param: "video_on") as! Bool){
-            // Attach the video from camera to stream
-            let videoDevice = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo).last as? AVCaptureDevice
-            
-            let camera = R5Camera(device: videoDevice, andBitRate: Int32(Testbed.getParameter(param: "bitrate") as! Int))
-            
-            camera?.width = Int32(Testbed.getParameter(param: "camera_width") as! Int)
-            camera?.height = Int32(Testbed.getParameter(param: "camera_height") as! Int)
-            camera?.fps = Int32(Testbed.getParameter(param: "fps") as! Int)
-            camera?.orientation = 90
-            self.publishStream!.attachVideo(camera)
-        }
         if(Testbed.getParameter(param: "audio_on") as! Bool){
             // Attach the audio from microphone to stream
             let audioDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
@@ -164,8 +163,7 @@ class BaseTest: UIViewController , R5StreamDelegate {
         view.addSubview(r5View.view)
         
         r5View.setFrame(self.view.bounds)
-        
-        r5View.showPreview(true)
+
         
         r5View.showDebugInfo(Testbed.getParameter(param: "debug_view") as! Bool)
         

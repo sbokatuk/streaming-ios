@@ -42,6 +42,7 @@
 		48DFEDD71C21C2540040B624 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DFEDD61C21C2540040B624 /* BaseTest.swift */; };
 		48DFEDD91C21C5940040B624 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DFEDD81C21C5940040B624 /* OpenAL.framework */; };
 		48DFEDDF1C21EA780040B624 /* Testbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DFEDDE1C21EA780040B624 /* Testbed.swift */; };
+		599751FF220355FA004BF698 /* ThreeWayAudioTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599751FE220355FA004BF698 /* ThreeWayAudioTest.swift */; };
 		9209F4A91F7EE38500A90080 /* PublishLocalRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209F4A81F7EE38500A90080 /* PublishLocalRecordTest.swift */; };
 		926794F51D061900004B0BCD /* PublishRemoteCallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926794F41D061900004B0BCD /* PublishRemoteCallTest.swift */; };
 		926794F71D06191E004B0BCD /* PublishStreamManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926794F61D06191E004B0BCD /* PublishStreamManagerTest.swift */; };
@@ -110,6 +111,7 @@
 		48DFEDD61C21C2540040B624 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTest.swift; path = Tests/BaseTest.swift; sourceTree = "<group>"; };
 		48DFEDD81C21C5940040B624 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		48DFEDDE1C21EA780040B624 /* Testbed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testbed.swift; sourceTree = "<group>"; };
+		599751FE220355FA004BF698 /* ThreeWayAudioTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeWayAudioTest.swift; sourceTree = "<group>"; };
 		9209F4A81F7EE38500A90080 /* PublishLocalRecordTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishLocalRecordTest.swift; path = Tests/PublishLocalRecord/PublishLocalRecordTest.swift; sourceTree = "<group>"; };
 		926794F41D061900004B0BCD /* PublishRemoteCallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishRemoteCallTest.swift; path = Tests/RemoteCall/PublishRemoteCallTest.swift; sourceTree = "<group>"; };
 		926794F61D06191E004B0BCD /* PublishStreamManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublishStreamManagerTest.swift; path = Tests/PublishStreamManager/PublishStreamManagerTest.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				92CC78081CB6F8DD00CD4352 /* SubscribeTwoStreams.swift */,
 				926794FE1D06199E004B0BCD /* TwoWayTest.swift */,
 				927FA28920EBCD2D00F16228 /* TwoWayStreamManagerTest.swift */,
+				599751FE220355FA004BF698 /* ThreeWayAudioTest.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -306,7 +309,7 @@
 				TargetAttributes = {
 					48DFEDA71C21BBC60040B624 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = E964K44BWW;
+						DevelopmentTeam = XG4TSA83W3;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599751FF220355FA004BF698 /* ThreeWayAudioTest.swift in Sources */,
 				92A642E5200D416600882600 /* SubscribeBackgroundTest.swift in Sources */,
 				48DFEDB01C21BBC60040B624 /* DetailViewController.swift in Sources */,
 				481B15761EB390600038A187 /* PublishSendTest.swift in Sources */,
@@ -514,7 +518,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = XG4TSA83W3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,7 +527,7 @@
 				INFOPLIST_FILE = R5ProTestbed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.infrared5.R5ProTestbed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteammobile.streaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "R5ProTestbed/R5ProTestbed-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -538,7 +542,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = E964K44BWW;
+				DEVELOPMENT_TEAM = XG4TSA83W3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,7 +551,7 @@
 				INFOPLIST_FILE = R5ProTestbed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.infrared5.R5ProTestbed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamteammobile.streaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "R5ProTestbed/R5ProTestbed-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

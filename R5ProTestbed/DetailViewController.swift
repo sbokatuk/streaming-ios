@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet weak var debugSwitch: UISwitch!
     @IBOutlet weak var videoSwitch: UISwitch!
     @IBOutlet weak var audioSwitch: UISwitch!
+    @IBOutlet weak var stream3Text: UITextField!
     
     @IBOutlet weak var licenseText: UILabel!
     @IBOutlet weak var licenseButton: UIButton!
@@ -55,11 +56,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBAction func onStream2NameChange(_ sender: AnyObject) {
         Testbed.setStream2Name(name: stream2Text.text!)
     }
+    @IBAction func onStream3NameChange(_ sender: Any) {
+        Testbed.setStream3Name(name: stream3Text.text!)
+    }
     @IBAction func onStreamNameSwap(_ sender: AnyObject) {
         Testbed.setStream1Name(name: stream2Text.text!)
-        Testbed.setStream2Name(name: stream1Text.text!)
+        Testbed.setStream2Name(name: stream3Text.text!)
+        Testbed.setStream3Name(name: stream1Text.text!)
         stream1Text.text = Testbed.parameters!["stream1"] as? String
         stream2Text.text = Testbed.parameters!["stream2"] as? String
+        stream3Text.text = Testbed.parameters!["stream3"] as? String
     }
     @IBAction func onHostChange(_ sender: AnyObject) {
         Testbed.setHost(ip: hostText.text!)
@@ -84,11 +90,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 //        portText.text = Testbed.parameters!["server_port"] as? String
         stream1Text.text = Testbed.parameters!["stream1"] as? String
         stream2Text.text = Testbed.parameters!["stream2"] as? String
+        stream3Text.text = Testbed.parameters!["stream3"] as? String
         
         hostText.delegate = self
 //        portText.delegate = self
         stream1Text.delegate = self
         stream2Text.delegate = self
+        stream3Text.delegate = self
         
         debugSwitch.setOn((Testbed.parameters!["debug_view"] as? Bool)!, animated: false)
         videoSwitch.setOn((Testbed.parameters!["video_on"] as? Bool)!, animated: false)

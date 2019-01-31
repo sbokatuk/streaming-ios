@@ -61,6 +61,10 @@ class Testbed: NSObject {
         Testbed.parameters?.setValue(name, forKey: "stream2")
     }
     
+    static func setStream3Name(name : String){
+        Testbed.parameters?.setValue(name, forKey: "stream3")
+    }
+    
     static func setDebug(on : Bool){
         Testbed.parameters?.setValue(on, forKey: "debug_view")
     }

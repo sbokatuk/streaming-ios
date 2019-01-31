@@ -4,6 +4,8 @@
 <dict>
 	<key>GlobalProperties</key>
 	<dict>
+		<key>stream3</key>
+		<string>stream3</string>
 		<key>license_key</key>
 		<string></string>
 		<key>server_port</key>
@@ -481,6 +483,17 @@
 			<string>Two Way - Stream Manager</string>
 			<key>class</key>
 			<string>TwoWayStreamManagerTest</string>
+		</dict>
+		<key>ThreeWay - Audio n Mute</key>
+		<dict>
+			<key>description</key>
+			<string>publish 1 stream and subscribe 2 other streams, click on screen will mute/unmute</string>
+			<key>LocalProperties</key>
+			<dict/>
+			<key>name</key>
+			<string>Three Way Audio</string>
+			<key>class</key>
+			<string>ThreeWayAudioTest</string>
 		</dict>
 	</dict>
 </dict>
